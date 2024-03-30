@@ -1,4 +1,4 @@
-import debug from "@/modules/db/debug";
+import debug from "@/modules/debug";
 import { Identifiable } from "@/types/Utility/Identifiable";
 import { OverriddenProperties, UniqueTo } from "@/types/utilities";
 import { Firestore, collection, doc } from "firebase/firestore";

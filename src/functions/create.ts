@@ -1,4 +1,4 @@
-import debug from "@/modules/db/debug";
+import debug from "@/modules/debug";
 import DeepPartial from "@/types/DeepPartial";
 import { Identifiable } from "@/types/Utility/Identifiable";
 import { OverriddenProperties, UniqueTo } from "@/types/utilities";

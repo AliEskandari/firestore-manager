@@ -6,7 +6,7 @@ import {
   doc,
   updateDoc,
 } from "firebase/firestore";
-import dbDebug from "../debug";
+import dbDebug from "@/modules/debug";
 
 export type UpdateFunctionGenerator = <T extends DocumentData>(
   db: Firestore,

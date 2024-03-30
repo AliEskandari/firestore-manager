@@ -3,7 +3,7 @@ import { Identifiable } from "@/types/Utility/Identifiable";
 import { OverriddenProperties, UniqueTo } from "@/types/utilities";
 import { Firestore } from "firebase/firestore";
 import { set } from "lodash";
-import dbDebug from "../debug";
+import dbDebug from "@/modules/debug";
 import { createWithCollectionPath } from "./create";
 import { Clauses, Options, findWithCollectionPath } from "./find";
 

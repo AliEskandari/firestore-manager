@@ -5,7 +5,7 @@ import {
   getDoc,
   onSnapshot,
 } from "firebase/firestore";
-import dbDebug from "../debug";
+import dbDebug from "@/modules/debug";
 
 type FindByIdFunctionOptions<T> = {
   onUpdate: (data: T, unsubscribe: Unsubscribe) => void;

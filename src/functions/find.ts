@@ -1,3 +1,4 @@
+import { Data, DotNotation } from "@/types/utilities";
 import {
   Firestore,
   QueryConstraint,
@@ -9,10 +10,7 @@ import {
   startAfter,
   where,
 } from "firebase/firestore";
-import dbDebug from "../debug";
-import { Data, DotNotation, Primitive } from "@/types/utilities";
-import { Identifiable } from "@/types/Utility/Identifiable";
-import { isArguments, isEmpty, isNull } from "lodash";
+import dbDebug from "@/modules/debug";
 
 export type FindFunctionGenerator = <T>(
   db: Firestore,

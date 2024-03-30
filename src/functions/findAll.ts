@@ -10,7 +10,7 @@ import {
   startAfter,
   where,
 } from "firebase/firestore";
-import dbDebug from "../debug";
+import dbDebug from "@/modules/debug";
 
 export type FindAllFunctionGenerator = <T>(
   db: Firestore,

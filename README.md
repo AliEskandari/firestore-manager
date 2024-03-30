@@ -1,6 +1,6 @@
 # Firestore Manager
 
-Create 'managers' for your firestore collections. You can make calls like
+Create managers for your firestore collections. You can make calls like
 
 ```ts
 const listing = await Listing.find({ title: "Charizard" }, { sort: "desc" });

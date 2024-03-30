@@ -1,6 +1,6 @@
 import { Identifiable } from "@/types/Utility/Identifiable";
 import { DocumentData, Firestore, doc, setDoc } from "firebase/firestore";
-import dbDebug from "../debug";
+import dbDebug from "@/modules/debug";
 
 export type SaveFunctionGenerator = <T extends DocumentData & Identifiable>(
   db: Firestore,

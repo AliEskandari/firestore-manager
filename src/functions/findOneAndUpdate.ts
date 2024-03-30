@@ -1,6 +1,6 @@
 import { Identifiable } from "@/types/Utility/Identifiable";
 import { Firestore, UpdateData } from "firebase/firestore";
-import dbDebug from "../debug";
+import dbDebug from "@/modules/debug";
 import { Clauses, Options, findWithCollectionPath } from "./find";
 import { updateWithCollectionPath } from "./update";
 

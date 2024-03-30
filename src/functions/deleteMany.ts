@@ -1,5 +1,5 @@
 import { Firestore, doc, deleteDoc, writeBatch } from "firebase/firestore";
-import debug from "@/modules/db/debug";
+import debug from "@/modules/debug";
 import { Clauses, Options, findWithCollectionPath } from "./find";
 import { Identifiable } from "@/types/Utility/Identifiable";
 

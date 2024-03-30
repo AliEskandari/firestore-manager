@@ -1,5 +1,5 @@
 import { Firestore, doc, deleteDoc } from "firebase/firestore";
-import dbDebug from "@/modules/db/debug";
+import dbDebug from "@/modules/debug";
 
 export type DeleteFunctionGenerator = <T extends { id: string }>(
   db: Firestore,
