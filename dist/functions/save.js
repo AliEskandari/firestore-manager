@@ -46,7 +46,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { doc, setDoc } from "firebase/firestore";
-import dbDebug from "../modules/debug";
+import dbDebug from "@/modules/debug";
 export var save = function (db, collectionPath) {
     if (typeof collectionPath === "function") {
         var saveFn = function (parentId, data) { return __awaiter(void 0, void 0, void 0, function () {

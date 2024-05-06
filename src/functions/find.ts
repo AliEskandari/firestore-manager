@@ -98,7 +98,6 @@ export const findWithCollectionPath = async <S>(
     queryContstraints.push(startAfter(options.startAfter));
 
   if (options?.limit) queryContstraints.push(limit(options.limit));
-
   const q = query(collection(db, collectionPath), ...queryContstraints);
 
   const querySnapshot = await getDocs(q);

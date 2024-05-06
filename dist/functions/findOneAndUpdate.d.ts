@@ -1,4 +1,4 @@
-import { Identifiable } from "../types/Identifiable";
+import { Identifiable } from "@/types/Identifiable";
 import { Firestore, UpdateData } from "firebase/firestore";
 import { Clauses, Options } from "./find";
 export type FindOneAndUpdateFunctionGenerator = <T extends Identifiable>(db: Firestore, collectionPath: string | ((id: string) => string), options?: {

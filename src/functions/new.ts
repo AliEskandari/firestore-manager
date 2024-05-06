@@ -26,7 +26,8 @@ export type NewFunctionWithArg<T> = {
 export const _new: NewFunctionGenerator = <T extends Identifiable>(
   db: Firestore,
   collectionPath: string | ((id: string) => string),
-  _default?: T
+  _default?: T,
+  options?: { debug: boolean }
 ) => {
   if (typeof collectionPath === "function") {
     const newFn: NewFunctionWithArg<T> = <S extends T = T>(
@@ -37,7 +38,13 @@ export const _new: NewFunctionGenerator = <T extends Identifiable>(
         | (Partial<S> & UniqueTo<S, T> & OverriddenProperties<S, T>)
     ) => {
       const _collectionPath = collectionPath(parentId);
-      return newWithCollectionPath<S, T>(db, _collectionPath, data, _default);
+      return newWithCollectionPath<S, T>(
+        db,
+        _collectionPath,
+        data,
+        _default,
+        options
+      );
     };
 
     return newFn;
@@ -48,7 +55,13 @@ export const _new: NewFunctionGenerator = <T extends Identifiable>(
         | undefined
         | (Partial<S> & UniqueTo<S, T> & OverriddenProperties<S, T>)
     ): S | T => {
-      return newWithCollectionPath<S, T>(db, collectionPath, data, _default);
+      return newWithCollectionPath<S, T>(
+        db,
+        collectionPath,
+        data,
+        _default,
+        options
+      );
     };
 
     return newFn;

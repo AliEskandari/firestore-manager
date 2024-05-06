@@ -8,7 +8,7 @@ import { FindOneFunction, FindOneFunctionWithArg } from "./findOne";
 import { FindOneAndUpdateFunction, FindOneAndUpdateFunctionWithArg } from "./findOneAndUpdate";
 import { UpdateFunction, UpdateFunctionWithArg } from "./update";
 import { DeleteManyFunction, DeleteManyFunctionWithArg } from "./deleteMany";
-import { Identifiable } from "../types/Identifiable";
+import { Identifiable } from "@/types/Identifiable";
 import { FindOneOrCreateFunction, FindOneOrCreateFunctionWithArg } from "./findOneOrCreate";
 import { SaveFunctionWithArg, SaveFunction } from "./save";
 import { FindAllFunction } from "./findAll";

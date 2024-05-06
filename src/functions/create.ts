@@ -92,6 +92,8 @@ export const createWithCollectionPath = async <
   const _values = merge(newDoc, values) as S;
   _values.createdAt = new Date().toISOString();
   _values.updatedAt = new Date().toISOString();
+  console.log({ db });
+
   const docRef = doc(collection(db, collectionPath), _values.id);
   await setDoc(docRef, _values);
   return _values;

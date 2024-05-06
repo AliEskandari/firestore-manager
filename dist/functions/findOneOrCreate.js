@@ -35,7 +35,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { set } from "lodash";
-import dbDebug from "../modules/debug";
+import dbDebug from "@/modules/debug";
 import { createWithCollectionPath } from "./create";
 import { findWithCollectionPath } from "./find";
 export var findOneOrCreate = function (db, collectionPath, _default, options) {

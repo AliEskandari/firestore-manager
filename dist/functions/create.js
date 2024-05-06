@@ -34,7 +34,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import debug from "../modules/debug";
+import debug from "@/modules/debug";
 import { collection, doc, setDoc } from "firebase/firestore";
 import { merge } from "lodash";
 import { newWithCollectionPath } from "./new";
@@ -85,6 +85,7 @@ export var createWithCollectionPath = function (db, collectionPath, values, _def
                 _values = merge(newDoc, values);
                 _values.createdAt = new Date().toISOString();
                 _values.updatedAt = new Date().toISOString();
+                console.log({ db: db });
                 docRef = doc(collection(db, collectionPath), _values.id);
                 return [4 /*yield*/, setDoc(docRef, _values)];
             case 1:

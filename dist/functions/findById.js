@@ -35,7 +35,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { doc, getDoc, onSnapshot, } from "firebase/firestore";
-import dbDebug from "../modules/debug";
+import dbDebug from "@/modules/debug";
 export var findById = function (db, collectionPath) {
     if (typeof collectionPath === "function") {
         var findByIdFn = function (parentId, id, options) {

@@ -9,19 +9,19 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import debug from "../modules/debug";
+import debug from "@/modules/debug";
 import { collection, doc } from "firebase/firestore";
-export var _new = function (db, collectionPath, _default) {
+export var _new = function (db, collectionPath, _default, options) {
     if (typeof collectionPath === "function") {
         var newFn = function (parentId, data) {
             var _collectionPath = collectionPath(parentId);
-            return newWithCollectionPath(db, _collectionPath, data, _default);
+            return newWithCollectionPath(db, _collectionPath, data, _default, options);
         };
         return newFn;
     }
     else {
         var newFn = function (data) {
-            return newWithCollectionPath(db, collectionPath, data, _default);
+            return newWithCollectionPath(db, collectionPath, data, _default, options);
         };
         return newFn;
     }
