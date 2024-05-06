@@ -21,12 +21,6 @@
         "noEmit": false, // Do not emit outputs (useful when using with Babel)
         "baseUrl": "./", // Base directory to resolve non-relative module names
         "paths": { // Specify paths for module names
-            "functions/*": [
-                "src/functions/*"
-            ],
-            "utils/*": [
-                "src/utils/*"
-            ],
             "@/*": [
                 "src/*"
             ]

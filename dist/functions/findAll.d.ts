@@ -1,4 +1,4 @@
-import { Data, DotNotation } from "@/types/utilities";
+import { Data, DotNotation } from "../types/utilities";
 import { Firestore } from "firebase/firestore";
 export type FindAllFunctionGenerator = <T>(db: Firestore, collectionId: string) => FindAllFunction<T>;
 export type ClauseValue = Data | Data[];

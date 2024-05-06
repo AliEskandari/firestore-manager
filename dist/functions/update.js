@@ -46,7 +46,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { doc, updateDoc, } from "firebase/firestore";
-import dbDebug from "@/modules/debug";
+import dbDebug from "../modules/debug";
 export var update = function (db, collectionPath) {
     if (typeof collectionPath === "function") {
         var updateFn = function (parentId, id, data) { return __awaiter(void 0, void 0, void 0, function () {
