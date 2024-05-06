@@ -1,6 +1,6 @@
 import debug from "@/modules/debug";
-import { Identifiable } from "@/types/Utility/Identifiable";
-import { OverriddenProperties, UniqueTo } from "@/types/utilities";
+import { Identifiable } from "@/types/Identifiable";
+import { OverriddenProperties, UniqueTo } from "@/types/Utilities";
 import { Firestore, collection, doc } from "firebase/firestore";
 export type NewFunctionGenerator = <T extends Identifiable>(
   db: Firestore,

@@ -1,4 +1,4 @@
-import { Data, DotNotation } from "@/types/utilities";
+import { Data, DotNotation } from "@/types/Utilities";
 import {
   Firestore,
   QueryConstraint,

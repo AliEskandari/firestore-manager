@@ -1,7 +1,7 @@
 import debug from "@/modules/debug";
 import DeepPartial from "@/types/DeepPartial";
-import { Identifiable } from "@/types/Utility/Identifiable";
-import { OverriddenProperties, UniqueTo } from "@/types/utilities";
+import { Identifiable } from "@/types/Identifiable";
+import { OverriddenProperties, UniqueTo } from "@/types/Utilities";
 import { Firestore, collection, doc, setDoc } from "firebase/firestore";
 import { merge } from "lodash";
 import { newWithCollectionPath } from "./new";

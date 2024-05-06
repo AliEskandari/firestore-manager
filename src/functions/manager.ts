@@ -20,7 +20,7 @@ import {
   DeleteManyFunction,
   DeleteManyFunctionWithArg,
 } from "./deleteMany";
-import { Identifiable } from "@/types/Utility/Identifiable";
+import { Identifiable } from "@/types/Identifiable";
 import {
   FindOneOrCreateFunction,
   findOneOrCreate,

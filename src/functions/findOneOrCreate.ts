@@ -1,6 +1,6 @@
 import DeepPartial from "@/types/DeepPartial";
-import { Identifiable } from "@/types/Utility/Identifiable";
-import { OverriddenProperties, UniqueTo } from "@/types/utilities";
+import { Identifiable } from "@/types/Identifiable";
+import { OverriddenProperties, UniqueTo } from "@/types/Utilities";
 import { Firestore } from "firebase/firestore";
 import { set } from "lodash";
 import dbDebug from "@/modules/debug";

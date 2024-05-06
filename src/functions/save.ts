@@ -1,4 +1,4 @@
-import { Identifiable } from "@/types/Utility/Identifiable";
+import { Identifiable } from "@/types/Identifiable";
 import { DocumentData, Firestore, doc, setDoc } from "firebase/firestore";
 import dbDebug from "@/modules/debug";
 

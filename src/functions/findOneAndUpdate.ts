@@ -1,4 +1,4 @@
-import { Identifiable } from "@/types/Utility/Identifiable";
+import { Identifiable } from "@/types/Identifiable";
 import { Firestore, UpdateData } from "firebase/firestore";
 import dbDebug from "@/modules/debug";
 import { Clauses, Options, findWithCollectionPath } from "./find";

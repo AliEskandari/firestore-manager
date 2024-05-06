@@ -4,7 +4,8 @@
   "version": "1.0.1",
   "dependencies": {
     "firebase": "^10.10.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "supports-color": "^9.4.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.12",
@@ -36,5 +37,9 @@
   "homepage": "https://github.com/alieskandari/firestore-manager#readme",
   "publishConfig": {
     "access": "public"
+  },
+  "exports": {
+    "./functions/*": "./dist/functions/*.js",
+    "./types/*": "./dist/types/*.js"
   }
 }
