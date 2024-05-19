@@ -44,7 +44,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 import { collectionGroup, getDocs, limit, orderBy, query, startAfter, where, } from "firebase/firestore";
-import dbDebug from "@/modules/debug";
+import dbDebug from "../modules/debug";
 export var findAll = function (db, collectionId) {
     var findAllFn = function (clauses, options) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {

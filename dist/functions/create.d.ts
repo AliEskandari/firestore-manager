@@ -1,6 +1,6 @@
-import DeepPartial from "@/types/DeepPartial";
-import { Identifiable } from "@/types/Identifiable";
-import { OverriddenProperties, UniqueTo } from "@/types/Utilities";
+import DeepPartial from "../types/DeepPartial";
+import { Identifiable } from "../types/Identifiable";
+import { OverriddenProperties, UniqueTo } from "../types/Utilities";
 import { Firestore } from "firebase/firestore";
 export type CreateFunctionGenerator = <T extends Identifiable>(db: Firestore, collectionPath: string | ((id: string) => string), _default?: T, options?: {
     debug: boolean;

@@ -9,7 +9,7 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import debug from "@/modules/debug";
+import debug from "../modules/debug";
 import { collection, doc } from "firebase/firestore";
 export var _new = function (db, collectionPath, _default, options) {
     if (typeof collectionPath === "function") {

@@ -35,7 +35,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { doc, writeBatch } from "firebase/firestore";
-import debug from "@/modules/debug";
+import debug from "../modules/debug";
 import { findWithCollectionPath } from "./find";
 export var deleteMany = function (db, collectionPath) {
     if (typeof collectionPath == "function") {
