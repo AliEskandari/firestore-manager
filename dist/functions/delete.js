@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,9 +8,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { doc, deleteDoc } from "firebase/firestore";
-import dbDebug from "../modules/debug";
-export const _delete = (db, collectionPath) => {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports._delete = void 0;
+const firestore_1 = require("firebase/firestore");
+const debug_1 = __importDefault(require("../modules/debug"));
+const _delete = (db, collectionPath) => {
     if (typeof collectionPath == "function") {
         const deleteFn = (parentId, id) => __awaiter(void 0, void 0, void 0, function* () {
             const _collectionPath = collectionPath(parentId);
@@ -24,9 +30,10 @@ export const _delete = (db, collectionPath) => {
         return deleteFn;
     }
 };
+exports._delete = _delete;
 const deleteWithCollectionPath = (db, collectionPath, id) => {
-    const debug = dbDebug.extend(collectionPath);
+    const debug = debug_1.default.extend(collectionPath);
     debug("Deleting doc with id %s", id);
-    const docRef = doc(db, collectionPath, id);
-    return deleteDoc(docRef);
+    const docRef = (0, firestore_1.doc)(db, collectionPath, id);
+    return (0, firestore_1.deleteDoc)(docRef);
 };

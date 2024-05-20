@@ -12,3 +12,6 @@ export type UniqueTo<S, T> = Omit<S, keyof T>;
 export type OverriddenProperties<S, T> = Pick<S, {
     [P in keyof S & keyof T]: [T[P]] extends [S[P]] ? [S[P]] extends [T[P]] ? never : P : P;
 }[keyof S & keyof T]>;
+export type NonNullify<T> = {
+    [P in keyof T]: NonNullable<T[P]>;
+};

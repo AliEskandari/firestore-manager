@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,11 +8,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { set } from "lodash";
-import dbDebug from "../modules/debug";
-import { createWithCollectionPath } from "./create";
-import { findWithCollectionPath } from "./find";
-export const findOneOrCreate = (db, collectionPath, _default, options) => {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.findOneOrCreate = void 0;
+const lodash_1 = require("lodash");
+const debug_1 = __importDefault(require("../modules/debug"));
+const create_1 = require("./create");
+const find_1 = require("./find");
+const findOneOrCreate = (db, collectionPath, _default, options) => {
     if (typeof collectionPath === "function") {
         const findOneOrCreateFn = (parentId, clauses, data, options) => __awaiter(void 0, void 0, void 0, function* () {
             const _collectionPath = collectionPath(parentId);
@@ -26,10 +32,11 @@ export const findOneOrCreate = (db, collectionPath, _default, options) => {
         return findOneOrCreateFn;
     }
 };
+exports.findOneOrCreate = findOneOrCreate;
 const findOneOrCreateWithCollectionPath = (db, collectionPath, clauses, data, _default, findOptions, options) => __awaiter(void 0, void 0, void 0, function* () {
-    const debug = dbDebug.extend(collectionPath);
+    const debug = debug_1.default.extend(collectionPath);
     debug("Finding one and creating with constraints... %O and data ... %O", clauses, data);
-    const results = yield findWithCollectionPath(db, collectionPath, clauses, findOptions);
+    const results = yield (0, find_1.findWithCollectionPath)(db, collectionPath, clauses, findOptions);
     let one;
     if (results.length > 0) {
         debug("Found results, updating doc");
@@ -38,9 +45,9 @@ const findOneOrCreateWithCollectionPath = (db, collectionPath, clauses, data, _d
     else {
         debug("No results found, creating new doc");
         Object.entries(clauses).forEach(([key, value]) => {
-            set(data, key, value);
+            (0, lodash_1.set)(data, key, value);
         });
-        one = yield createWithCollectionPath(db, collectionPath, data, _default);
+        one = yield (0, create_1.createWithCollectionPath)(db, collectionPath, data, _default);
     }
     return one;
 });

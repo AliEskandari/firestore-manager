@@ -37,3 +37,6 @@ export type OverriddenProperties<S, T> = Pick<
       : P;
   }[keyof S & keyof T]
 >;
+export type NonNullify<T> = {
+  [P in keyof T]: NonNullable<T[P]>;
+};

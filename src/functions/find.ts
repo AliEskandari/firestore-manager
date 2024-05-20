@@ -1,4 +1,4 @@
-import { Data, DotNotation } from "@/types/Utilities";
+import { Data, DotNotation, NonNullify } from "@/types/Utilities";
 import {
   Firestore,
   QueryConstraint,
@@ -18,7 +18,9 @@ export type FindFunctionGenerator = <T>(
 ) => FindFunction<T> | FindFunctionWithArg<T>;
 
 export type ClauseValue = Data | Data[];
-export type Clauses<T> = Partial<Record<DotNotation<T>, ClauseValue>>;
+export type Clauses<T> = Partial<
+  Record<DotNotation<NonNullify<T>>, ClauseValue>
+>;
 
 export type Options<T> = {
   /**
