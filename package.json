@@ -1,17 +1,18 @@
 {
   "name": "@adx-studio/firestore-manager",
   "description": "Create managers for your firestore collections. You can make calls like",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "dependencies": {
     "debug": "^4.3.4",
-    "firebase": "^10.12.0",
     "lodash": "^4.17.21",
     "supports-color": "^8.1.1"
+  },
+  "peerDependencies": {
+    "firebase": "^10.12.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.12",
     "@types/lodash": "^4.17.0",
-    "tsc": "^2.0.4",
     "tsc-alias": "^1.8.8",
     "typescript": "^5.4.5"
   },

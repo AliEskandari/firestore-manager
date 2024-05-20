@@ -1,26 +1,15 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import debug from "../modules/debug";
 import { collection, doc } from "firebase/firestore";
-export var _new = function (db, collectionPath, _default, options) {
+export const _new = (db, collectionPath, _default, options) => {
     if (typeof collectionPath === "function") {
-        var newFn = function (parentId, data) {
-            var _collectionPath = collectionPath(parentId);
+        const newFn = (parentId, data) => {
+            const _collectionPath = collectionPath(parentId);
             return newWithCollectionPath(db, _collectionPath, data, _default, options);
         };
         return newFn;
     }
     else {
-        var newFn = function (data) {
+        const newFn = (data) => {
             return newWithCollectionPath(db, collectionPath, data, _default, options);
         };
         return newFn;
@@ -35,11 +24,11 @@ export var _new = function (db, collectionPath, _default, options) {
  * @param options Options for the function (optional)
  * @returns
  */
-export var newWithCollectionPath = function (db, collectionPath, data, _default, options) {
+export const newWithCollectionPath = (db, collectionPath, data, _default, options) => {
     if (options === null || options === void 0 ? void 0 : options.debug)
         debug("New doc in %s...", collectionPath);
-    var docRef = doc(collection(db, collectionPath));
-    var newDoc = __assign(__assign({}, structuredClone(_default !== null && _default !== void 0 ? _default : { id: "" })), data);
+    const docRef = doc(collection(db, collectionPath));
+    const newDoc = Object.assign(Object.assign({}, structuredClone(_default !== null && _default !== void 0 ? _default : { id: "" })), data);
     newDoc.createdAt = new Date().toISOString();
     newDoc.updatedAt = new Date().toISOString();
     newDoc.id = docRef.id;
